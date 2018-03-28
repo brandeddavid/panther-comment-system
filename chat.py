@@ -15,10 +15,7 @@ users = [
     },
 ]
 
-comments = []
-
-
-def getUserId(user):
+def getUserName(user):
     for x in users:
         print(x)
         if x == user:
@@ -27,7 +24,7 @@ def getUserId(user):
 
 
 def moderator(usr):
-    user = getUserId(usr)
+    user = getUserName(usr)
     print("What do you wish to do?")
     print("Enter 1 to add comment")
     print("Enter 2 to edit comment")
@@ -42,6 +39,10 @@ def moderator(usr):
         pass
 
     elif action == 2 or action == '2':
+        commentId = input("Please enter id of comment to edit: ")
+        comment = input("Please enter new comment: ")
+        editComment(commentId, comment)
+        print(comments)
         pass
 
     elif action == 3 or action == '3':
@@ -52,8 +53,14 @@ def moderator(usr):
 
 
 def addCommment(user, comment):
-    comments.append([{"id": 2, "comment": comment, "author": user, "timeStamp": datetime.datetime.now(),
+    index = len(comments) + 1
+    comments.append([{"id": index, "comment": comment, "author": user, "timeStamp": datetime.datetime.now(),
                       "isParent": True, "parent": None}])
+    pass
+
+def editComment(commentId, newComment):
+    comment = [comment for comment in comments if comment['id'] == commentId]
+    comment[0]['comment'] = newComment
     pass
 
 moderator({'id': 1, 'username': 'admin', 'password': 'admin', 'userType': 1, 'lastLogin': None})
