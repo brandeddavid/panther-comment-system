@@ -11,10 +11,10 @@ def normal(user):
     prompt = input('> ')
 
     if prompt == str(1):
-
+        prompt = input('Enter Comment: ')
         comment = {}
         comment['id'] = 123
-        comment['commentMessage'] = input('Enter Comment: ')
+        comment['commentMessage'] = prompt
         comment['author'] = user['username']
         comment['timeStamp'] = datetime.datetime.now()
         comment['isParent'] = True
@@ -24,7 +24,7 @@ def normal(user):
 
     elif prompt == str(2):
 
-        pass
+        print('Here is a list of all your comments: ')
 
     else:
 
