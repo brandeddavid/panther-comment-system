@@ -12,15 +12,8 @@ def normal(user):
 
     if prompt == str(1):
         prompt = input('Enter Comment: ')
-        comment = {}
-        comment['id'] = 123
-        comment['commentMessage'] = prompt
-        comment['author'] = user['username']
-        comment['timeStamp'] = datetime.datetime.now()
-        comment['isParent'] = True
-        comment['parent'] = None
 
-        comments.append(comment)
+        addComment(user['username'], prompt)
 
     elif prompt == str(2):
 
