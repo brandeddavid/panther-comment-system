@@ -6,6 +6,7 @@ comments = [
     {"id":1, "commentMessage":"Second message", "author":"David", "timeStamp":21-7-2018, "isParent": False}
 ]
 
+
 # Admin function
 def admin():
     print('What do you want to do? \n')
