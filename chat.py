@@ -19,7 +19,9 @@ def admin(user):
         pass
 
     elif prompt == str(2):
-        pass
+        print('Here is a list of all the comments: ')
+        print(*comments, sep='\n')
+        print('Select comment to edit: ')
 
     else:
         pass
