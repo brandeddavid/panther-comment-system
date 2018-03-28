@@ -1,6 +1,12 @@
 import datetime
 from time import gmtime, strftime
 
+# Comments list
+comments = [
+    {"id":1, "commentMessage":"First message", "author":"Brian", "timeStamp":23-5-2018, "isParent": True},
+    {"id":2, "commentMessage":"Second message", "author":"David", "timeStamp":21-7-2018, "isParent": False, "parent":1}
+]
+
 users = [
     {
         "id": 1, 'username': 'admin', 'password': 'admin', 'userType': 1, "lastLogin": None
@@ -16,7 +22,24 @@ users = [
     },
 ]
 
+# Admin function
+def admin(user):
+    print('What do you want to do? \n')
+    print('Enter 1 for Edit comment\n')
+    print('Enter 2 for Delete comment\n')
+    
+    prompt = input('> ')
 
+    if prompt == str(1):
+        print('Here is a list of all the comments: ')
+        print(*comments, sep='\n')
+        print('Select comment to edit: ')
+
+    elif prompt == str(2):
+        pass
+
+    else:
+        pass 
 
 def normal(user):
 
@@ -28,6 +51,7 @@ def normal(user):
     prompt = input('> ')
 
     if prompt == str(1):
+
         prompt = input('Enter Comment: ')
 
         addComment(user['username'], prompt)
@@ -81,3 +105,4 @@ def main():
 if __name__ == '__main__':
 
     main()
+
