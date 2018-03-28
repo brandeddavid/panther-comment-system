@@ -16,12 +16,12 @@ def admin(user):
     prompt = input('> ')
 
     if prompt == str(1):
-        pass
-
-    elif prompt == str(2):
         print('Here is a list of all the comments: ')
         print(*comments, sep='\n')
         print('Select comment to edit: ')
+
+    elif prompt == str(2):
+        pass
 
     else:
         pass
